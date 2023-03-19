@@ -16,3 +16,6 @@ tenacity = "^8.2.2"
 alembic = "^1.10.2"
 sqlalchemy = "^2.0.6"
 httpx = "^0.23.3"
+cffi = "^1.15.1"
+python-jose = {extras = ["cryptography"], version = "~3.3.0"}
+passlib = {extras = ["bcrypt"], version = "~1.7.2"}

@@ -13,4 +13,5 @@ class User(Base):
     email = Column(String(255), nullable=False, index=True, unique=True)
     is_superuser = Column(Boolean, default=False)
     channels = relationship("Channel", back_populates="submitter", cascade="all, delete-orphan", uselist=True)
+    hashed_password = Column(String, nullable=False)
 
