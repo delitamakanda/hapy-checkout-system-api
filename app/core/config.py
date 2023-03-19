@@ -8,6 +8,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     JWT_SECRET_KEY: str = "secret"
+    WEBHOOK_SECRET_KEY: str = "secret"
     ALGORITHM: str = "HS256"
 
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8 # 8 days

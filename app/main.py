@@ -1,5 +1,10 @@
 import time
-from fastapi import FastAPI, APIRouter, Query, HTTPException, Request, Depends
+import http
+import hashlib
+import hmac
+import os
+
+from fastapi import FastAPI, APIRouter, Query, HTTPException, Request, Depends, Response, Header
 from fastapi.templating import Jinja2Templates
 from typing import Optional, Any
 from pathlib import Path
@@ -23,12 +28,31 @@ app = FastAPI(
     debug=True,
 )
 
+def generate_hash_signature(secret_key: bytes, payload: bytes, digest_method=hashlib.sha1) -> str:
+    return hmac.new(
+        secret_key,
+        payload,
+        digest_method,
+    ).hexdigest()
+
 root_router = APIRouter()
 
 @root_router.get('/', status_code=200)
 def root(request: Request) -> dict:
     return TEMPLATES.TemplateResponse("index.html", { "request": request })
 
+
+@app.post("/orders.notify", status_code=200)
+async def webhook(request: Request, x_hub_signature: str = Header(None)):
+    payload = await request.body()
+    secret_key = settings.WEBHOOK_SECRET_KEY.encode("utf-8")
+    signature = generate_hash_signature(secret_key, payload)
+    if x_hub_signature != f"sha1={signature}":
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid signature",
+        )
+    return {}
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
