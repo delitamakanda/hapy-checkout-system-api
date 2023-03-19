@@ -1,16 +1,173 @@
 from pydantic import BaseModel, HttpUrl
-from typing import Sequence
+from typing import Sequence, Any
 
 # TODO
 
 class ChannelBase(BaseModel):
-    pass
+    channel_order_id: str
+    brand_id: str
+    consumption_mode_id: int
+    currency: str
+    customer_id: str
+    daily_order_id: str
+    device_id: str
+    device_name: str
+    discount: Any
+    entrance_fees: Any
+    fees: Any
+    grants: Any
+    pricing_rule: Any
+    items: Sequence[Any]
+    number_of_guests: int
+    payments: Sequence[Any]
+    restaurant: Sequence[Any]
+    external_id: str
+    seller: str
+    channel_id: int
+    start_date: str
+    expected_date: str
+    business_day: str
+    business_year: str
+    business_month: str
+    last_update_date: str
+    status: str
+    web_payment_status: str
+    tags: Sequence[str]
+    taxes: Sequence[Any]
+    total_price_discounted_with_tax_excluded: Any
+    total_price_discounted_with_tax_included: Any
+    total_amount_free: Any
+    total_item_free: Any
+    total_discount: Any
+    total_tax: Any
+    turnover: str
+    marketplace_store_name: str
+    service: str
+    discount_employee_name: str
+    discount_code: str
+    cancellation_reason: str
+    cancellation_reason_description: str
+    total_amount_cancelled: Any
+    total_item_cancelled: Any
+    table_name: str
+    ticket_number: str
+    comment: str
+    is_cancellable: bool
+    is_refundable: bool
+    customer: Any
+    delivery_address: Any
+    submitter_id: int
+    submitter: Any
+
 
 class ChannelCreate(ChannelBase):
-    pass
+    channel_order_id: str
+    brand_id: str
+    consumption_mode_id: int
+    currency: str
+    customer_id: str
+    daily_order_id: str
+    device_id: str
+    device_name: str
+    discount: Any
+    entrance_fees: Any
+    fees: Any
+    grants: Any
+    pricing_rule: Any
+    items: Sequence[Any]
+    number_of_guests: int
+    payments: Sequence[Any]
+    restaurant: Sequence[Any]
+    external_id: str
+    seller: str
+    channel_id: int
+    start_date: str
+    expected_date: str
+    business_day: str
+    business_year: str
+    business_month: str
+    last_update_date: str
+    status: str
+    web_payment_status: str
+    tags: Sequence[str]
+    taxes: Sequence[Any]
+    total_price_discounted_with_tax_excluded: Any
+    total_price_discounted_with_tax_included: Any
+    total_amount_free: Any
+    total_item_free: Any
+    total_discount: Any
+    total_tax: Any
+    turnover: str
+    marketplace_store_name: str
+    service: str
+    discount_employee_name: str
+    discount_code: str
+    cancellation_reason: str
+    cancellation_reason_description: str
+    total_amount_cancelled: Any
+    total_item_cancelled: Any
+    table_name: str
+    ticket_number: str
+    comment: str
+    is_cancellable: bool
+    is_refundable: bool
+    customer: Any
+    delivery_address: Any
+    submitter_id: int
 
 class ChannelUpdate(ChannelBase):
-    pass
+    channel_order_id: str
+    brand_id: str
+    consumption_mode_id: int
+    currency: str
+    customer_id: str
+    daily_order_id: str
+    device_id: str
+    device_name: str
+    discount: Any
+    entrance_fees: Any
+    fees: Any
+    grants: Any
+    pricing_rule: Any
+    items: Sequence[Any]
+    number_of_guests: int
+    payments: Sequence[Any]
+    restaurant: Sequence[Any]
+    external_id: str
+    seller: str
+    channel_id: int
+    start_date: str
+    expected_date: str
+    business_day: str
+    business_year: str
+    business_month: str
+    last_update_date: str
+    status: str
+    web_payment_status: str
+    tags: Sequence[str]
+    taxes: Sequence[Any]
+    total_price_discounted_with_tax_excluded: Any
+    total_price_discounted_with_tax_included: Any
+    total_amount_free: Any
+    total_item_free: Any
+    total_discount: Any
+    total_tax: Any
+    turnover: str
+    marketplace_store_name: str
+    service: str
+    discount_employee_name: str
+    discount_code: str
+    cancellation_reason: str
+    cancellation_reason_description: str
+    total_amount_cancelled: Any
+    total_item_cancelled: Any
+    table_name: str
+    ticket_number: str
+    comment: str
+    is_cancellable: bool
+    is_refundable: bool
+    customer: Any
+    delivery_address: Any
 
 class ChannelInDBBase(ChannelBase):
     id: int

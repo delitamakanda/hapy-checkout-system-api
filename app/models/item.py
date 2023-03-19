@@ -36,7 +36,7 @@ class Item(Base):
     cancel_reason = Column(String(256), nullable=True)
     device_name = Column(String(256), nullable=True)
     device_id = Column(String(256), nullable=True)
-    categories = Column(ForeignKey("Category.id"), nullable=True)
-    tags = Column(ForeignKey("Tag.id"), nullable=True)
+    categories = Column(ForeignKey("category.id"), nullable=True)
+    tags = Column(ForeignKey("tag.id"), nullable=True)
     channel_id = Column(Integer, ForeignKey('channel.id'), nullable=True)
 
