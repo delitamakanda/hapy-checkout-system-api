@@ -5,6 +5,7 @@ from pathlib import Path
 from sqlalchemy.orm import Session
 
 from app.schemas.channel import Channel, ChannelCreate, ChannelSearchResults, ChannelUpdate
+from app.schemas.user import User, UserCreate, UserUpdate
 from app import crud
 from app import deps
 
@@ -38,7 +39,7 @@ def get_channels(request: Request, db: Session = Depends(deps.get_db)) -> list[C
 
 @api_router.get('/channels/{channel_id}', response_model=Channel, status_code=200)
 def get_channel(channel_id: int, request: Request, db: Session = Depends(deps.get_db)) -> Channel:
-    response = crud.channel.get(db, channel_id=channel_id)
+    response = crud.channel.get(db, id=channel_id)
     if not response:
         raise HTTPException(status_code=404, detail=f"Channel {channel_id} not found")
     return response
@@ -59,18 +60,22 @@ def create_channel(channel: ChannelCreate, request: Request, db: Session = Depen
 
 @api_router.delete('/channels/{channel_id}', status_code=204)
 def delete_channel(channel_id: int, db: Session = Depends(deps.get_db)) -> None:
-    response = crud.channel.get(db, channel_id=channel_id)
+    response = crud.channel.get(db, id=channel_id)
     if not response:
         raise HTTPException(status_code=404, detail=f"Channel {channel_id} not found")
     return crud.channel.delete(db, channel_id=channel_id)
 
 @api_router.put('/channels/{channel_id}', response_model=Channel, status_code=200)
 def update_channel(channel_id: int, channel: ChannelUpdate, db: Session = Depends(deps.get_db)) -> Channel:
-    response = crud.channel.get(db, channel_id=channel_id)
+    response = crud.channel.get(db, id=channel_id)
     if not response:
         raise HTTPException(status_code=404, detail=f"Channel {channel_id} not found")
     return crud.channel.update(db, db_obj=response, obj_in=channel)
 
+
+@api_router.get('/users', response_model=list[User])
+def get_users(request: Request, db: Session = Depends(deps.get_db)) -> list[User]:
+    return crud.user.get_multi(db)
 
 app.include_router(api_router)
 

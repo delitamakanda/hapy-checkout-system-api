@@ -14,3 +14,4 @@ class Customer(Base):
     email = Column(String(100))
     badge_number = Column(String(100))
     student = Column(ForeignKey("student.id"), nullable=True)
+    channel_id = Column(Integer, ForeignKey('channel.id'), nullable=True)

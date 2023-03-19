@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 from app.db.base_class import Base
 
@@ -14,3 +13,4 @@ class DeliveryAddress(Base):
     digicode = Column(String(255))
     phone = Column(String(255))
     additional_info = Column(String(255))
+    channel_id = Column(Integer, ForeignKey('channel.id'), nullable=True)

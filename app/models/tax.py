@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 from app.db.base_class import Base
 
@@ -10,3 +10,4 @@ class Tax(Base):
     total_tax = Column(String(10), nullable=False)
     total_price_discounted_with_tax_included = Column(String(10), nullable=False)
     total_excl_tax = Column(String(10), nullable=False)
+    channel_id = Column(Integer, ForeignKey('channel.id'), nullable=True)

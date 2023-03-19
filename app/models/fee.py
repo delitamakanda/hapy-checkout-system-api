@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 from app.db.base_class import Base
 
@@ -10,4 +10,5 @@ class Fee(Base):
     tax_rate = Column(String(10), nullable=False)
     quantity = Column(Integer, nullable=False)
     amount = Column(String(10), nullable=False)
+    channel_id = Column(Integer, ForeignKey('channel.id'), nullable=True)
 

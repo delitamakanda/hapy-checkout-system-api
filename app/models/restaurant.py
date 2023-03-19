@@ -10,3 +10,4 @@ class Restaurant(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False)
     address = Column(ForeignKey("restaurant.id"), nullable=False)
+    channel_id = Column(Integer, ForeignKey('channel.id'), nullable=True)
