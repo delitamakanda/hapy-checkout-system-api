@@ -1,5 +1,10 @@
 # Hâpy Checkout System API
 
+Software for a cash register system
+
+Fastapi API
+
+> "Personification of the flood of the Nile, Hâpy is linked to fertility and abundance. Promise of miraculous fertility, the Nile River was considered by the ancient Egyptians as a resurgence of the Primordial Ocean."
 
 ```bash
 poetry run ./run.sh
