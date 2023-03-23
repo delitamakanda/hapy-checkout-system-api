@@ -23,6 +23,12 @@ poetry run python app/main.py
 alembic init alembic
 ```
 
+## create alembic migration
+
+```bash
+alembic revision -m "inital migration"
+```
+
 
 ## init migration
 
