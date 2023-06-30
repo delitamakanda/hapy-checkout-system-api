@@ -125,7 +125,7 @@
       },
       "restaurant": {
          "externalId": "SX138900_nomportail",
-         "name": "Resto Produit Innovorder",
+         "name": "Resto",
          "contactPhone": "0442090904",
          "legal": {
             "legalId": 17,
@@ -183,6 +183,6 @@
       "fees": [],
       "discounts": [],
       "loyaltyPrograms": [],
-      "htmlTicket": "<br/><br /><div><b>Site : Resto Produit Innovorder</b></div><br /><div><b>Téléphone : 0442090904</b></div><br /><div><b>Adresse : 30 Rue Blondel, 75002 Paris, France</b></div><br /><div><b>            Code NAF : 232D2E |             SIREN : NCTTAA |             TVA : 1332323RESTO        </b></div><br />14/03/2023 22:00 - Couvert(s) : 1</div><br /><div>Réf caisse: IO_WEB</div><br /><div>Ticket : 0 - Commande : #242606</div><br /><div>        Client : Quentin Fritz -         Badge : #1234323232        </div><br /><br/><div>---------------------------------</div><br /><div><b>ARTICLES</b></div><br />1x :sweet_potato: Bol de patates douces  5€<br /><b>Total articles :</b> 5.00€<br /><br/><div>---------------------------------</div><br /><div><b>SUBVENTIONS</b></div><br />seuil-abs-fritz : -1€<br /><b>Total subventions :</b> -1€<br /><br/><div>---------------------------------</div><br /><div><b>TOTAL</b></div><br /><b>Total TTC :</b> 4€<br />Montant HT : 3.64€<br /><table bgcolor=black cellspacing=1 cellpadding=2><tr bgcolor=white><th>%TVA</th><th>HT</th><th>TVA</th><th>TTC</th></tr><br /><tr bgcolor=white><td>10%</td><td>3.64€</td><td>0.36€</td><td>4€</td></tr></table><br />TVA TOTAL : 0.36€"
+      "htmlTicket": "<br/><br /><div><b>Site : Resto Produit</b></div><br /><div><b>Téléphone : 0442090904</b></div><br /><div><b>Adresse : 30 Rue Blondel, 75002 Paris, France</b></div><br /><div><b>            Code NAF : 232D2E |             SIREN : NCTTAA |             TVA : 1332323RESTO        </b></div><br />14/03/2023 22:00 - Couvert(s) : 1</div><br /><div>Réf caisse: IO_WEB</div><br /><div>Ticket : 0 - Commande : #242606</div><br /><div>        Client : Quentin Fritz -         Badge : #1234323232        </div><br /><br/><div>---------------------------------</div><br /><div><b>ARTICLES</b></div><br />1x :sweet_potato: Bol de patates douces  5€<br /><b>Total articles :</b> 5.00€<br /><br/><div>---------------------------------</div><br /><div><b>SUBVENTIONS</b></div><br />seuil-abs-fritz : -1€<br /><b>Total subventions :</b> -1€<br /><br/><div>---------------------------------</div><br /><div><b>TOTAL</b></div><br /><b>Total TTC :</b> 4€<br />Montant HT : 3.64€<br /><table bgcolor=black cellspacing=1 cellpadding=2><tr bgcolor=white><th>%TVA</th><th>HT</th><th>TVA</th><th>TTC</th></tr><br /><tr bgcolor=white><td>10%</td><td>3.64€</td><td>0.36€</td><td>4€</td></tr></table><br />TVA TOTAL : 0.36€"
    }
 }
